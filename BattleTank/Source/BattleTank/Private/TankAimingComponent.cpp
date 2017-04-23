@@ -5,8 +5,6 @@
 #include "../Public/TankTurret.h"
 #include "../Public/TankAimingComponent.h"
 
-
-
 // Sets default values for this component's properties
 UTankAimingComponent::UTankAimingComponent()
 {
@@ -17,18 +15,11 @@ UTankAimingComponent::UTankAimingComponent()
 	// ...
 }
 
-void UTankAimingComponent::SetBarrelReference(UTankBarrel* BarrelToSet)
+void UTankAimingComponent::Initialise(UTankBarrel* BarrelToSet, UTankTurret* TurretToSet)
 {
-	if (!BarrelToSet) { return; }
 	Barrel = BarrelToSet;
-}
-
-void UTankAimingComponent::SetTurretReference(UTankTurret* TurretToSet)
-{
-	if (!TurretToSet) { return; }
 	Turret = TurretToSet;
 }
-
 
 void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 {
